@@ -1,0 +1,9 @@
+version: 0.2
+phases:
+  build:
+    commands:
+      - echo "Bundling EC2 app"
+artifacts:
+  files:
+    - apps/ec2-web/**/*
+    - apps/ec2-web/appspec-ec2.yaml

@@ -1,0 +1,16 @@
+{
+  "family": "REPLACED_AT_DEPLOY",
+  "networkMode": "awsvpc",
+  "requiresCompatibilities": ["FARGATE"],
+  "cpu": "256",
+  "memory": "512",
+  "executionRoleArn": "REPLACED_AT_DEPLOY",
+  "containerDefinitions": [
+    {
+      "name": "web",
+      "image": "REPLACED_AT_DEPLOY",
+      "essential": true,
+      "portMappings": [{ "containerPort": 8080, "protocol": "tcp" }]
+    }
+  ]
+}

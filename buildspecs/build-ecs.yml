@@ -1,0 +1,15 @@
+version: 0.2
+phases:
+  pre_build:
+    commands:
+      - $(aws ecr get-login --no-include-email)
+  build:
+    commands:
+      - docker build -t $ECR_URI:latest apps/ecs-web
+      - docker push $ECR_URI:latest
+      - jq ".executionRoleArn=\"${AWS_ECS_EXEC_ROLE_ARN}\" | .family=\"${ECS_FAMILY}\" | .containerDefinitions[0].image=\"$ECR_URI:latest\"" apps/ecs-web/taskdef.json > taskdef.out.json
+artifacts:
+  files:
+    - apps/ecs-web/appspec-ecs.yaml
+    - taskdef.out.json
+  discard-paths: yes

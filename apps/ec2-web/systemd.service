@@ -1,0 +1,9 @@
+[Unit]
+Description=EC2 Web
+After=network.target
+[Service]
+WorkingDirectory=/opt/ec2-web
+ExecStart=/usr/bin/python3 /opt/ec2-web/app.py
+Restart=always
+[Install]
+WantedBy=multi-user.target

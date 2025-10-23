@@ -1,0 +1,11 @@
+version: 0.2
+phases:
+  build:
+    commands:
+      - cd apps/lambda-api
+      - zip -r lambda.zip handler.py
+artifacts:
+  files:
+    - apps/lambda-api/lambda.zip
+    - apps/lambda-api/appspec-lambda.yaml
+  discard-paths: yes

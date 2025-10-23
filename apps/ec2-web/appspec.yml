@@ -1,0 +1,15 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /opt/ec2-web
+hooks:
+  BeforeInstall:
+    - location: apps/ec2-web/scripts/install_dependencies.sh
+      timeout: 300
+  ApplicationStart:
+    - location: apps/ec2-web/scripts/start_service.sh
+      timeout: 120
+  ApplicationStop:
+    - location: apps/ec2-web/scripts/stop_service.sh
+      timeout: 120

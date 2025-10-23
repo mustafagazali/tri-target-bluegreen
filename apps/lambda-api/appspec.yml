@@ -1,0 +1,9 @@
+version: 0.0
+Resources:
+  - LambdaFunction:
+      Type: AWS::Lambda::Function
+      Properties:
+        Name: tri-target-bluegreen-lambda
+        Alias: Live
+        CurrentVersion: 1
+        TargetVersion: 2

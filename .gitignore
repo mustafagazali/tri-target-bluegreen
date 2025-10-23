@@ -1,0 +1,19 @@
+﻿# Terraform
+**/.terraform/*
+*.tfstate
+*.tfstate.*
+crash.log
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+.terraformrc
+terraform.rc
+
+# Python
+__pycache__/
+*.py[cod]
+
+# Build artifacts produced by CodeBuild
+ec2-artifact.zip
+lambda-artifact.zip
